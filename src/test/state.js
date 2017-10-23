@@ -1,5 +1,5 @@
 // application root reducer
-import reducer from '../src/redux/reducer';
+import reducer from '../redux/reducer';
 
 // Initial application state
 export const initialState = reducer(null, {})[0];
