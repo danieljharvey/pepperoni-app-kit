@@ -2,6 +2,9 @@
 #
 .DS_Store
 
+# new typescript compile directory
+artifacts/
+
 # Xcode
 #
 build/
