@@ -1,4 +1,6 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+import { Component } from 'react';
+
 import PropTypes from 'prop-types';
 import {
   StyleSheet,
@@ -20,12 +22,12 @@ export interface Props {
     reset: () => any,
     random: () => any
   };
-  navigate: () => any;
+  navigate: ({}) => any;
 }
 
 export interface State {}
 
-class CounterView extends Component<any, any> {
+class CounterView extends Component<Props, State> {
   static displayName = 'CounterView';
 
   static navigationOptions = {

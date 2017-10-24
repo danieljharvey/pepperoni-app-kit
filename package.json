@@ -25,7 +25,9 @@
     "test:watch": "jest --watch",
     "lint": "eslint src test",
     "coverage": "rimraf coverage && jest --coverage",
-    "version": "support/version-ios.sh"
+    "version": "support/version-ios.sh",
+    "tsc": "tsc",
+    "tsc:watch": "tsc -w"
   },
   "jest": {
     "preset": "react-native",
@@ -34,6 +36,20 @@
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-navigation)"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
     ]
   },
   "dependencies": {
@@ -59,11 +75,11 @@
   "devDependencies": {
     "@types/react": "^16.0.18",
     "@types/react-native": "^0.49.2",
-    "babel-core": "^6.9.0",
+    "babel-core": "^6.10.0",
     "babel-eslint": "^7.1.0",
-    "babel-jest": "^17.0.2",
+    "babel-jest": "^21.2.0",
     "babel-polyfill": "^6.9.0",
-    "babel-preset-react-native": "^1.9.0",
+    "babel-preset-react-native": "^4.0.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
     "enzyme": "^3.0.0",
@@ -73,7 +89,7 @@
     "eslint-plugin-react": "^6.7.1",
     "fetch-mock": "^5.5.0",
     "istanbul": "1.0.0-alpha.2",
-    "jest": "^17.0.2",
+    "jest": "^21.0.0",
     "plop": "^1.7.4",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^16.0.0",
@@ -82,6 +98,7 @@
     "react-test-renderer": "~15.4.2",
     "remote-redux-devtools": "^0.5.7",
     "rimraf": "^2.5.2",
+    "ts-jest": "^21.1.3",
     "typescript": "^2.5.3"
   }
 }
