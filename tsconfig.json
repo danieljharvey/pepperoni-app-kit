@@ -10,34 +10,35 @@
         "allowSyntheticDefaultImports": true,
         "allowJs": true,
         "sourceMap": true,
-        "types": ["react"],
+        "types": ["node", "jest","react-native", "react"],
         "lib":[
             "es5",
             "es2015",
             "es2016",
             "es2017"
         ],
+        "baseUrl": "./",
         "paths": {
             "src/*": [
                 "./src/*"
             ]
-        }
+        },
+        "skipLibCheck": true
     },
     "include": [
         "src/**/*"
     ],
     "filesGlob": [
-        "node_modules/@types/**/*.d.ts",
         "src/**/*.ts",
         "src/**/*.tsx"
     ],
     "types": [
         "react",
         "react-native",
-        "jest",
-        "enzyme"
+        "jest"
     ],
     "exclude": [
+        "artifacts",
         "android",
         "ios",
         "node_modules",
@@ -45,7 +46,7 @@
         "typings",
         "env.example.js",
         "env.js",
-        "plopfile.js",
+        "plopfile.js"
     ],
     "compileOnSave": false
 }
