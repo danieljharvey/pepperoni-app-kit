@@ -10,7 +10,22 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-class CounterView extends Component {
+export interface Props {
+  counter: number;
+  userName?: string;
+  userProfilePhoto?: string;
+  loading: boolean;
+  counterStateActions: {
+    increment: () => any,
+    reset: () => any,
+    random: () => any
+  };
+  navigate: () => any;
+}
+
+export interface State {}
+
+class CounterView extends Component<any, any> {
   static displayName = 'CounterView';
 
   static navigationOptions = {
@@ -19,19 +34,6 @@ class CounterView extends Component {
         <Icon name='plus-one' size={24} color={props.tintColor} />
       )
   }
-
-  static propTypes = {
-    counter: PropTypes.number.isRequired,
-    userName: PropTypes.string,
-    userProfilePhoto: PropTypes.string,
-    loading: PropTypes.bool.isRequired,
-    counterStateActions: PropTypes.shape({
-      increment: PropTypes.func.isRequired,
-      reset: PropTypes.func.isRequired,
-      random: PropTypes.func.isRequired
-    }).isRequired,
-    navigate: PropTypes.func.isRequired
-  };
 
   increment = () => {
     this.props.counterStateActions.increment();
